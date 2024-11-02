@@ -1,19 +1,10 @@
-import {NavBar} from "./components/navbar";
-import {BannerSection} from "./components/banner-section";
+import {RouterProvider} from "react-router-dom";
+import {notAuthenticated} from "./routes/not-authenticated.tsx";
 
 function App() {
 
   return (
-    <div>
-      <NavBar/>
-      <BannerSection/>
-      {/*<NewReleasesSection/>*/}
-      {/*<OnSaleSection/>*/}
-      {/*<BestSellersSection/>*/}
-      {/*<LastChanceSection/>*/}
-      {/*<LatestNewsSection/>*/}
-      {/*<Footer/>*/}
-    </div>
+    <RouterProvider router={notAuthenticated}/>
   )
 }
 

@@ -39,7 +39,7 @@
 
 .swiper {
     transition: .3s;
-    /*opacity: 0;*/
+    opacity: 0;
     padding: 0;
     z-index: 2;
     top: 50%;
