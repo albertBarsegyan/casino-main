@@ -1,4 +1,3 @@
-import styles from './styles.module.css'
 import {SectionLayout} from "../section-layout";
 import {Carousel} from "../common/carousel";
 
