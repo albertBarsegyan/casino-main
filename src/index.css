@@ -32,6 +32,7 @@ body {
     font-family: 'Figtree', sans-serif; /* Fallback to sans-serif if Figtree fails to load */
     font-weight: 400; /* Default weight */
     font-style: normal; /* Default style */
+    background: #161618;
 }
 
 ol, ul {
