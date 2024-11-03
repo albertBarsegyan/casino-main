@@ -2,17 +2,22 @@ import styles from './styles.module.css';
 import {ArrowsIconLeft, ArrowsIconRight} from "../icons/arrows-icon.tsx";
 import classNames from "classnames";
 import priceImage from '/icons/icon-price.png'
+import {navigateTo} from "../../utils/navigation.ts";
+import {useNavigate} from "react-router-dom";
 
 export const CardCarousel = ({items}: { items: CardProps[] }) => {
+  const navigate = useNavigate()
+
   return (
     <div className={styles.carouselContainer}>
-      <button className={styles.navButton}><ArrowsIconLeft/></button>
+      <button className={styles.navButton} onClick={navigateTo(navigate)}><ArrowsIconLeft/></button>
       <div className={styles.carousel}>
         {items.map((item, index) => (
           <Card key={index} {...item} />
         ))}
       </div>
-      <button className={classNames(styles.navButton, styles.navButtonRight)}><ArrowsIconRight/></button>
+      <button className={classNames(styles.navButton, styles.navButtonRight)} onClick={navigateTo(navigate)}>
+        <ArrowsIconRight/></button>
     </div>
   );
 };
@@ -28,8 +33,10 @@ interface CardProps {
 }
 
 const Card: React.FC<CardProps> = ({title, image, price, originalPrice, remaining, game, discount}) => {
+  const navigate = useNavigate()
+
   return (
-    <button type='button' className={styles.card}>
+    <button type='button' className={styles.card} onClick={navigateTo(navigate)}>
       <img src={image} alt={title} className={styles.cardImage}/>
       <div className={styles.cardContent}>
         <h3 className={styles.cardTitle}>{title}</h3>

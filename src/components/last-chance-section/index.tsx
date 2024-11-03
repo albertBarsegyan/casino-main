@@ -1,6 +1,8 @@
 import styles from "../on-sale-section/styles.module.css";
 import {SectionHeader} from "../section-header";
 import {CardCarousel} from "../products-carousel";
+import {navigateTo} from "../../utils/navigation.ts";
+import {useNavigate} from "react-router-dom";
 
 const items = [
   {
@@ -54,6 +56,8 @@ const items = [
 ];
 
 export function LastChanceSection() {
+  const navigate = useNavigate()
+
   return (
     <div className={styles.sectionWrapper}>
       <SectionHeader title='Best Sellers '/>
@@ -61,7 +65,7 @@ export function LastChanceSection() {
       <CardCarousel items={items}/>
 
       <div className={styles.viewAllItemsWrapper}>
-        <button type='button' className={styles.button}>
+        <button onClick={navigateTo(navigate)} type='button' className={styles.button}>
           VIEW ALL ITEMS ON THE STORE
         </button>
       </div>

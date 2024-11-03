@@ -6,17 +6,24 @@ import {Telegram} from "../icons/telegram.tsx";
 import {Discord} from "../icons/discord.tsx";
 import {Search} from "../icons/search.tsx";
 import {DropdownIcon} from "../icons/dropdown-icon.tsx";
+import {useNavigate} from "react-router-dom";
+import {navigateTo} from "../../utils/navigation.ts";
 
 
 export const NavBar = () => {
+  const navigate = useNavigate()
+
+
   return (
     <nav className={styles.navBar}>
       <div className={styles.navbarParts}>
-        <button className={classNames(styles.iconButton, styles.buttonSpace)} type='button'>
+        <button onClick={navigateTo(navigate)} className={classNames(styles.iconButton, styles.buttonSpace)}
+                type='button'>
           <GeneralIcon/>
         </button>
 
-        <button className={classNames(styles.iconButton, styles.buttonSpace)} type='button'>
+        <button onClick={navigateTo(navigate)} className={classNames(styles.iconButton, styles.buttonSpace)}
+                type='button'>
           <GalaIcon/>
         </button>
 
@@ -35,21 +42,23 @@ export const NavBar = () => {
 
       <div className={classNames(styles.navbarParts, styles.navbarRightPart)}>
         <div className={styles.menu}>
-          <button className={styles.menuItem}>Store</button>
-          <button className={styles.menuItem}>Games</button>
-          <button className={styles.menuItem}>News</button>
+          <button className={styles.menuItem} onClick={navigateTo(navigate)}>Store</button>
+          <button className={styles.menuItem} onClick={navigateTo(navigate)}>Games</button>
+          <button className={styles.menuItem} onClick={navigateTo(navigate)}>News</button>
 
-          <button className={classNames(styles.iconButton, styles.linkButton)} type='button'>
+          <button onClick={navigateTo(navigate)} className={classNames(styles.iconButton, styles.linkButton)}
+                  type='button'>
             <Telegram/>
           </button>
 
-          <button className={classNames(styles.iconButton, styles.linkButton)} type='button'>
+          <button onClick={navigateTo(navigate)} className={classNames(styles.iconButton, styles.linkButton)}
+                  type='button'>
             <Discord/>
           </button>
         </div>
 
         <div className={styles.authButtons}>
-          <button className={styles.buttonOutlined}>Sign Up</button>
+          <button className={styles.buttonOutlined} onClick={navigateTo(navigate)}>Sign Up</button>
           <button className={classNames(styles.buttonOutlined, styles.loginButton)}>Login</button>
         </div>
       </div>

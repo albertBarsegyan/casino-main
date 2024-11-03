@@ -1,8 +1,12 @@
 import styles from './styles.module.css'
 import {GeneralIcon} from "../icons/general-icon.tsx";
 import {CustomCheckbox} from "../common/checkbox";
+import {navigateTo} from "../../utils/navigation.ts";
+import {useNavigate} from "react-router-dom";
 
 export function LatestNewsSection() {
+  const navigate = useNavigate()
+
   return (
     <div className={styles.footer}>
       <div className={styles.sectionLayout}>
@@ -21,7 +25,7 @@ export function LatestNewsSection() {
                 className={styles.input}
                 required
               />
-              <button type="submit" className={styles.button}>
+              <button onClick={navigateTo(navigate)} type="submit" className={styles.button}>
                 Sign Up
               </button>
             </form>
