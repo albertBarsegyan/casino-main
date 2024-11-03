@@ -1,5 +1,6 @@
 import {SectionLayout} from "../section-layout";
 import styles from './styles.module.css'
+import {Carousel} from "./new-releases-carousel.tsx";
 
 export function NewReleasesSection() {
   return (
@@ -11,6 +12,13 @@ export function NewReleasesSection() {
           <hr/>
         </div>
 
+        <Carousel/>
+
+        <div className={styles.moreButtonWrapper}>
+          <button className={styles.moreButton}>
+            BROWSE ALL GAMES
+          </button>
+        </div>
       </div>
     </SectionLayout>
   );

@@ -4,12 +4,17 @@ import classNames from "classnames";
 
 interface SectionLayoutProps extends PropsWithChildren {
   className?: string;
+  variant?: 'default' | 'small';
 }
 
-export function SectionLayout({children, className}: Readonly<SectionLayoutProps>) {
+export function SectionLayout({children, variant = 'default', className}: Readonly<SectionLayoutProps>) {
   return (
-    <div className={classNames(styles.wrapper, className)}>
-      <div className={styles.contentWrapper}>
+    <div className={classNames(styles.wrapper, className, {
+      [styles.smallLayout]: variant === 'small',
+    })}>
+      <div className={classNames({
+        [styles.contentWrapperSmall]: variant === 'small'
+      }, styles.contentWrapper)}>
         {children}
       </div>
     </div>

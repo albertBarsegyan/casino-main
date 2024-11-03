@@ -1,5 +1,6 @@
 import styles from './styles.module.css'
 import {GeneralIcon} from "../icons/general-icon.tsx";
+import {CustomCheckbox} from "../common/checkbox";
 
 export function LatestNewsSection() {
   return (
@@ -26,13 +27,13 @@ export function LatestNewsSection() {
             </form>
             <div className={styles.checkboxGroup}>
               <label className={styles.checkboxLabel}>
-                <input type="checkbox" required/>
+                <CustomCheckbox/>
                 I agree to the <a href="#" className={styles.link}>Privacy Policy</a> and <a href="#"
                                                                                              className={styles.link}>Terms
                 and Conditions</a>
               </label>
               <label className={styles.checkboxLabel}>
-                <input type="checkbox"/>
+                <CustomCheckbox/>
                 I agree to receive promotional materials from Gala. I understand that I can withdraw my consent at any
                 time.
               </label>
