@@ -3,7 +3,8 @@ import {BannerSection} from "../components/banner-section";
 import {NewReleasesSection} from "../components/new-releases-section";
 import {LatestNewsSection} from "../components/latest-news-section";
 import {SectionLayout} from "../components/section-layout";
-import {OnSaleSection} from "../components/on-sale-section";
+
+// import {OnSaleSection} from "../components/on-sale-section";
 
 export function Home() {
   return (
